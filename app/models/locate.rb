@@ -1,0 +1,2 @@
+class Locate < ApplicationRecord
+end
