@@ -6,7 +6,7 @@ class SessionController < ApplicationController
       flash[:notice] = 'Log in successful'
       session[:current_user_id] = @user.id
       session[:user_name] = @user.fullname
-      redirect_to location_path
+      redirect_to locate_path
     else
       flash[:alert] = 'User not found.'
       redirect_to root_path

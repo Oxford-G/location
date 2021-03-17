@@ -12,7 +12,7 @@ class UsersController < ApplicationController
   # GET /users/1 or /users/1.json
   def show
     @user = User.find(params[:id])
-    @idea = @user.locates
+    @locate = @user.locates
   end
 
   def follow_users; end
@@ -49,7 +49,7 @@ class UsersController < ApplicationController
       if @user.save
         session[:current_user_id] = @user.id
         session[:user_name] = @user.fullname
-        format.html { redirect_to ideas_path, notice: 'Welcome! You have signed up successfully.' }
+        format.html { redirect_to locates_path, notice: 'Welcome! You have signed up successfully.' }
         format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new, status: :unprocessable_entity }
