@@ -21,7 +21,7 @@ class LocatesController < ApplicationController
   #   # POST /users or /users.json
   def create
     current_user = User.find(session[:current_user_id])
-    @locate = current_user.locates.new(text: params[:idea])
+    @locate = current_user.locates.new(text: params[:locate])
 
     respond_to do |format|
       if @locate.save
@@ -33,6 +33,6 @@ class LocatesController < ApplicationController
   end
 
   def idea_params
-    params.require(:idea).permit(:text)
+    params.require(:locate).permit(:text)
   end
 end

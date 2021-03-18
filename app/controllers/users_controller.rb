@@ -50,7 +50,7 @@ class UsersController < ApplicationController
         session[:current_user_id] = @user.id
         session[:user_name] = @user.fullname
         format.html { redirect_to locates_path, notice: 'Welcome! You have signed up successfully.' }
-        format.json { render :show, status: :created, location: @user }
+        format.json { render :show, status: :created, locates: @user }
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @user.errors, status: :unprocessable_entity }
@@ -63,7 +63,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.update(user_params)
         format.html { redirect_to @user, notice: 'User was successfully updated.' }
-        format.json { render :show, status: :ok, location: @user }
+        format.json { render :show, status: :ok, locates: @user }
       else
         format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @user.errors, status: :unprocessable_entity }
