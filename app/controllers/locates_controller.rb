@@ -15,7 +15,7 @@ class LocatesController < ApplicationController
 
   def show
     @user = User.order('created_at DESC')
-    # @idea = @user.ideas
+    # @locate = @user.locates
   end
 
   #   # POST /users or /users.json
