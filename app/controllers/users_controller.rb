@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: %i[show edit update destroy]
+  before_action :require_session, only: %i[show edit update destroy]
   skip_before_action :authorized, only: %i[new create]
 
   # before_action :require_login, only: %i[index show]
@@ -83,8 +83,12 @@ class UsersController < ApplicationController
   private
 
   # Use callbacks to share common setup or constraints between actions.
-  def set_user
-    @user = User.find(params[:id])
+  # def set_user
+  #   @user = User.find(params[:id])
+  # end
+
+  def require_session
+    redirect_to root_path, alert: 'Sign Up or Sign In to access this feature!' unless current_user
   end
 
   # Only allow a list of trusted parameters through.

@@ -6,7 +6,7 @@
     background-color: white;
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);">
 <%= form_tag locates_path, method: :post do%>
-    <span class=' mr-2'><%= label_tag  "Share Idea here"%></span>
+    <span class=' mr-2'><%= label_tag  "Type In here"%></span>
    <%= text_field_tag :locate, params[:locate], class: 'form-control d-block', autofocus: true  %>
     <span class="text-center">
     <%= submit_tag "Share", class: 'btn btn-default btn-lg btn-submit btn-info m-2'%>
