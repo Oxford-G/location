@@ -1,5 +1,6 @@
 class LocatesController < ApplicationController
   before_action :authorized
+  before_action :require_session
 
   def index
     @locate = Locate.order('created_at DESC')
@@ -34,5 +35,11 @@ class LocatesController < ApplicationController
 
   def idea_params
     params.require(:locate).permit(:text)
+  end
+
+  private
+
+  def require_session
+    redirect_to root_path, alert: 'Sign Up or Sign In to access this feature!' unless current_user
   end
 end
