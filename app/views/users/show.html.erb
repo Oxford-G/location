@@ -2,11 +2,12 @@
   <div class="row">
     <div class="col-9 p-0" style="height:100vh">
     <!--Homepage Nav-->
-   
-    <img  src="https://via.placeholder.com/728x90?text=728x90+Leaderboard
-C/O https://placeholder.com/banner-ads/#46821560_Full_Banner" alt="Generic placeholder image" class="img-responsive" width="600" height="250" style="width: 100%;
-  height: auto;">
-  <div style="overflow-y: scroll;
+
+<div class="cover-img-holder">
+<%= image_tag  @user.cover_image.variant( :gravity=>"Center", resize: "600x200^" ) %>
+</div>
+
+<div style="overflow-y: scroll;
   height:480px;">
   <%= render partial: 'locates/feed', locate: @locate %>
 </div>
