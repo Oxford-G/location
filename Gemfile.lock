@@ -84,6 +84,12 @@ GEM
     childprocess (3.0.0)
     concurrent-ruby (1.1.8)
     crass (1.0.6)
+    database_cleaner (2.0.1)
+      database_cleaner-active_record (~> 2.0.0)
+    database_cleaner-active_record (2.0.0)
+      activerecord (>= 5.a)
+      database_cleaner-core (~> 2.0.0)
+    database_cleaner-core (2.0.1)
     diff-lcs (1.4.4)
     erubi (1.10.0)
     execjs (2.7.0)
@@ -191,6 +197,8 @@ GEM
       childprocess (>= 0.5, < 4.0)
       rubyzip (>= 1.2.2)
     semantic_range (3.0.0)
+    shoulda-matchers (4.5.1)
+      activesupport (>= 4.2.0)
     spring (2.1.1)
     sprockets (4.0.2)
       concurrent-ruby (~> 1.0)
@@ -235,6 +243,7 @@ DEPENDENCIES
   bootstrap (~> 5.0.0.beta1)
   byebug
   capybara (>= 3.26)
+  database_cleaner
   gravatar_image_tag (~> 1.2)
   jbuilder (~> 2.7)
   listen (~> 3.3)
@@ -245,6 +254,7 @@ DEPENDENCIES
   rspec-rails
   sass-rails (>= 6)
   selenium-webdriver
+  shoulda-matchers (~> 4.0)
   spring
   turbolinks (~> 5)
   tzinfo-data
