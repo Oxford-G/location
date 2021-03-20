@@ -88,7 +88,7 @@ class UsersController < ApplicationController
   # end
 
   def require_session
-    redirect_to root_path, alert: 'Sign Up or Sign In to access this feature!' unless current_user
+    redirect_to root_path, alert: 'Sign Up or Log In to access this feature!' unless current_user
   end
 
   # Only allow a list of trusted parameters through.
