@@ -34,10 +34,10 @@ The project design is inspired by [Lifestyle](https://www.behance.net/gallery/14
 - Open your browser and go to `127.0.0.1:3000` or `localhost:3000`
 
 ## Live Demo
-https://young.com/
+https://mighty-gorge-44973.herokuapp.com/
 
 ## Screenshot
-![](./app/assets/images/rootpage.png)
+![](./app/assets/images/locate.png)
 
 
 ## Designed With
