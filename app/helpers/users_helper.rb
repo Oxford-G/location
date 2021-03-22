@@ -1,5 +1,5 @@
 module UsersHelper
-	def destroy
+  def destroy
     session.delete(:current_user_id)
   end
 end
