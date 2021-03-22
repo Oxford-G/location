@@ -5,8 +5,6 @@ class User < ApplicationRecord
   has_many :followings, class_name: 'Following', dependent: :destroy, foreign_key: :followed_id
   has_many :shared_ideas, class_name: 'Locate', dependent: :destroy, foreign_key: :author_id
 
-  has_one_attached :photo
-  has_one_attached :cover_image
   
   validates :username, presence: true, length: { minimum: 3, maximum: 10 }
   validates :email, presence: true, length: { minimum: 3, maximum: 30 }
