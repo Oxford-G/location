@@ -1,4 +1,5 @@
 class FollowingsController < ApplicationController
+  # rubocop:disable Style/IdenticalConditionalBranches,
   before_action :set_following, only: %i[show edit update destroy]
 
   # GET /followings or /followings.json
@@ -71,3 +72,4 @@ class FollowingsController < ApplicationController
     params.require(:following).permit(:follower_id, :followed_id)
   end
 end
+# rubocop:enable Style/IdenticalConditionalBranches,
