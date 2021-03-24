@@ -13,6 +13,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @locate = @user.locates
+    @user_followed_by = @user.followers
   end
 
   def follow_users; end

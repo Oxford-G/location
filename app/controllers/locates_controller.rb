@@ -4,10 +4,11 @@ class LocatesController < ApplicationController
 
   def index
     @locate = Locate.order('created_at DESC')
+    @users = User.all.order('created_at DESC')
     @locates = Locate.new
-    @first_user = User.first
-    @second_user = User.second
-    @third_user = User.third
+    # @first_user = User.first
+    # @second_user = User.second
+    # @third_user = User.third
   end
 
   def new
