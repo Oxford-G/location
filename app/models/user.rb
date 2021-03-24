@@ -14,4 +14,7 @@ class User < ApplicationRecord
   validates :fullname, presence: true, length: { minimum: 3, maximum: 30 }
   validates_uniqueness_of :username
   validates_uniqueness_of :email
+
+  mount_uploader :photo, AvatarUploader
+  mount_uploader :cover_image, CoverImageUploader
 end

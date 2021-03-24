@@ -24,11 +24,13 @@
               
                 <div class="position-fixed">
                 <div class="media">
-                  <img  src="//placehold.it/50" alt="Generic placeholder image">
+                <% if current_user.photo %>
+                <div class="photo"><%= link_to image_tag(current_user.photo_url), user_path(current_user) %></div>
+               <% end %>
                   <div class="media-body">
                     <h6 class="align-self-center my-3 p-1 text-uppercase"><%= current_user.fullname%></h6>
                   </div>
-                </div>
+                </div></br>
                 <div class='d-flex my-4'>
                   <p class='px-3 pb-2 text-center'><%= current_user.followers.count%><br>Followers</p>
                   <p class='px-3 pb-2 text-center'><%= current_user.followeds.count%><br>Following</p>
