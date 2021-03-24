@@ -3,8 +3,8 @@ module UsersHelper
     session.delete(:current_user_id)
   end
 
-
   def avatar_thumbnail
+
     if photo.attached?
       photo.variant(resize: '50x50!').processed
     else
