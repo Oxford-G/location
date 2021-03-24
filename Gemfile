@@ -31,7 +31,8 @@ gem 'bootsnap', '>= 1.4.4', require: false
 # Use bootstrap for styling and responsiveness
 gem 'bootstrap', '~> 5.0.0.beta1'
 
-gem 'gravatar_image_tag', '~> 1.2'
+# gem 'gravatar_image_tag', '~> 1.2'
+gem 'carrierwave', '~> 2.0'
 gem 'image_processing', '~> 1.2'
 
 group :development, :test do
