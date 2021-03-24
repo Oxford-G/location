@@ -1,0 +1,43 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-9 p-0">
+    <!--Homepage Nav-->
+    <ul class="nav border-muted border-bottom mb-4" id="navbar-example2">
+  <li class="nav-item">
+    <a class="nav-link text-uppercase text-muted pt-4" href="#locate" style=" border-bottom:5px solid #50A4E2;
+">locate</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link text-uppercase text-muted pt-4" href="#tech">pictures</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link text-uppercase text-muted pt-4" href="#lifestyle">videos</a>
+  </li>
+</ul>
+  <%= render 'form', locate: @locate %>
+  <div style="overflow-y: scroll; height:420px;">
+  <%= render 'feed', locate: @locate%>
+</div>
+
+</div>
+
+
+    <!-- Right border for who to follow-->
+    <div class="col-3 border border-muted border-right border-bottom">
+      <div>
+        <p class="text-uppercase text-muted p-3 border-muted border-bottom"> who to follow <i class="fa fa-refresh ml-4 float-right"></i></p>        
+      </div>
+      <% @users.each do |user| %>
+          <div>
+            <div class="d-flex mb-3">
+            <% if current_user.id != user.id %>
+              <h4 class="text-capitalize m-1"><%= user.fullname %><br/>
+              <small><%= link_to 'see profile', user_path(user), class: 'unfollow' %></small>
+              </h4>
+            <% end %>
+            </div>
+          </div>
+      <% end %>
+    </div>
+  </div>
+</div>

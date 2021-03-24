@@ -1,0 +1,59 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-9 p-0" style="height:100vh">
+    <!--Homepage Nav-->
+
+    <% if @user.cover_image %>
+    <div class="cover_image"> <%=link_to image_tag(@user.cover_image_url), user_path(@user) %></div>
+  <% end %>
+
+<div style="overflow-y: scroll;
+  height:480px;">
+  <%= render partial: 'locates/feed', locate: @locate %>
+</div>
+
+</div>
+
+    <!-- Right border for users profile-->
+    <div class="col-3 border border-muted border-right border-bottom">
+      <div></br>
+
+        <div class="mb-3 text-center">
+          <% if @user.photo %>
+            <div class="cover"> <%=link_to image_tag(@user.photo_url), user_path(@user) %></div>
+          <% end %>
+          <p class="text-capitalize m-1"><%= @user.fullname%><br/>
+          <small><a href="#">@<%=@user.username%></a></small><br/>
+          <% if (@user.id != session[:current_user_id])%>
+          <% if check_following(session[:current_user_id], @user.id) == false%>
+          <%= button_to "Follow", followings_path(follower_id: session[:current_user_id], followed_id:@user.id),:method => :post, class: "btn btn-lg text-white button-color"%>
+          <% else%>
+            <%= button_to "Unfollow", unfollow_path(follower_id: session[:current_user_id], followed_id:@user.id),:method => :delete, class: "btn btn-lg text-white button-color"%>
+          <% end %>
+          <% end %>
+          </p>
+        </div>
+        <div class='d-flex my-4  border-muted ml-4'>
+            <p class='px-2  text-center'><span class="font-weight-bold"><%= @user.locates.count%></span><br><span class="text-muted">Locate</span></p>
+            <p class='px-2 text-center'>
+              <span class="font-weight-bold"><%= @user.followers.count%></span>
+              <br>
+              <span class="text-muted">Followers</span>
+            </p>
+            <p class='px-2 text-center'>
+              <span class="font-weight-bold"><%= @user.followeds.count%></span>
+              <br>
+              <span class="text-muted">Following
+            </p>
+        </div>
+        <p class="text-muted"> FOLLOWED BY</p>
+
+        <div class="container-fluid">
+        <% @user_followed_by.each do |follow| %>
+          <h4><%= link_to follow.fullname.titleize, user_path(follow)%><h4>
+        <% end %>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
