@@ -2,8 +2,6 @@ class UsersController < ApplicationController
   before_action :require_session, only: %i[show edit update destroy]
   skip_before_action :authorized, only: %i[new create]
 
-  # before_action :require_login, only: %i[index show]
-
   # GET /users or /users.json
   def index
     @users = User.all
@@ -22,10 +20,6 @@ class UsersController < ApplicationController
   def new
     @user = User.new
   end
-
-  # GET /users/1/edit
-  # def edit
-  # end
 
   def sign_in; end
 
@@ -82,11 +76,6 @@ class UsersController < ApplicationController
   end
 
   private
-
-  # Use callbacks to share common setup or constraints between actions.
-  # def set_user
-  #   @user = User.find(params[:id])
-  # end
 
   def require_session
     redirect_to root_path, alert: 'Sign Up or Log In to access this feature!' unless current_user

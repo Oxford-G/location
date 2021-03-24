@@ -6,9 +6,6 @@ class LocatesController < ApplicationController
     @locate = Locate.order('created_at DESC')
     @users = User.all.order('created_at DESC')
     @locates = Locate.new
-    # @first_user = User.first
-    # @second_user = User.second
-    # @third_user = User.third
   end
 
   def new
@@ -17,7 +14,6 @@ class LocatesController < ApplicationController
 
   def show
     @user = User.order('created_at DESC')
-    # @locate = @user.locates
   end
 
   #   # POST /users or /users.json
