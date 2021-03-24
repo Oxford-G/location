@@ -38,6 +38,7 @@ https://mighty-gorge-44973.herokuapp.com/
 
 ## Screenshot
 ![](./app/assets/images/locate.png)
+![](./app/assets/images/second.png)
 
 
 ## Designed With
